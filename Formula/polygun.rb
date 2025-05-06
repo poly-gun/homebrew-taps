@@ -5,29 +5,29 @@
 class Polygun < Formula
   desc "CLI"
   homepage "https://github.com/poly-gun/polygun-cli"
-  version "0.1.14"
+  version "0.1.15"
   license "MIT"
 
   depends_on "bash" => :optional
   depends_on "fish" => :optional
-  depends_on "git" if OS.mac?
+  depends_on "git"
   depends_on "zsh" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.14/polygun-cli-darwin-x86-64.tar.gz", using: CurlDownloadStrategy
-      sha256 "615be2d7a0038f3f046e73122153c366a026f790725feab3865fb6dfb5ebb97e"
+      url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.15/polygun-darwin-x86-64.tar.gz", using: CurlDownloadStrategy
+      sha256 "7563340c7728e58697e532f3967caeb858816be37041d6ee4a745f55874ec8e7"
 
       def install
-        bin.install "polygun-cli"
+        bin.install "polygun"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.14/polygun-cli-darwin-arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "9efd99ab2cc8bdb6adec4526e0e8445a7da905a601f2f071682d2b79da6431e8"
+      url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.15/polygun-darwin-arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "684a944fbb0f8fa387c2bb91e8c21e413ed823319d85d3291d2da5ebdaf91dd3"
 
       def install
-        bin.install "polygun-cli"
+        bin.install "polygun"
       end
     end
   end
@@ -35,21 +35,21 @@ class Polygun < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.14/polygun-cli-linux-x86-64.tar.gz", using: CurlDownloadStrategy
-        sha256 "c858547a838d26618900f35f03a550ecc24454a1dd0409664343b88d038c305d"
+        url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.15/polygun-linux-x86-64.tar.gz", using: CurlDownloadStrategy
+        sha256 "a323b981de9943c2970072cf7f85a3c547677825f0ee1de0ca62323081aa09b0"
 
         def install
-          bin.install "polygun-cli"
+          bin.install "polygun"
         end
       end
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.14/polygun-cli-linux-arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "d372f33677624fcb03da0c55da56c73e32a8105bb49f1ef05f7779a817de4630"
+        url "https://github.com/poly-gun/polygun-cli/releases/download/v0.1.15/polygun-linux-arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "d2c252451a56fb07520a922bc0067a353751052df0e374a158ed34860afa660a"
 
         def install
-          bin.install "polygun-cli"
+          bin.install "polygun"
         end
       end
     end
